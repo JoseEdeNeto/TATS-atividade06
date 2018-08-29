@@ -59,4 +59,11 @@ public class CalculadoraTest {
        
        Assert.assertArrayEquals(expected, valores, 0);
    }
+   
+   @Test(expected = Exception.class)
+   public void testeVetorVazio(){
+       double[] vetor = {};
+       Calculadora calc = new Calculadora();
+       calc.calculaMedia(vetor);
+   }
 }
