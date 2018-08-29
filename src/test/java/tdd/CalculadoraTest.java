@@ -25,7 +25,7 @@ public class CalculadoraTest {
    }
    
    @Test
-   public void testMediaValoresMenorMaiorAcimaAbaixo(){
+   public void testeMediaValoresMenorMaiorAcimaAbaixo(){
        double[] vetor = {5, 2, 1, 4, 3, 6};
        Calculadora calc = new Calculadora();
        double media = calc.calculaMedia(vetor);
@@ -48,5 +48,15 @@ public class CalculadoraTest {
        double desvio = calc.calculaDesvioPadrao(vetor);
        
        Assert.assertEquals(1.707825, desvio, 0.5);
+   }
+   
+   @Test
+   public void testeMenoresMaiores() throws Exception{
+       double[] vetor = {5, 2, 1, 4, 3, 6};
+       Calculadora calc = new Calculadora();
+       double[] valores = calc.menoresMaiores(vetor, 2);
+       double[] expected = {1, 2, 5, 6};
+       
+       Assert.assertArrayEquals(expected, valores, 0);
    }
 }
