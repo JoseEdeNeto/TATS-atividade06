@@ -57,6 +57,16 @@ public class Calculadora {
         return count;
     }
     
+    public double calculaDesvioPadrao(double[] vetor) {
+        double sum = 0;
+        double media = calculaMedia(vetor);
+        for(double valor : vetor){
+            double aux = valor - media;
+            sum += aux * aux;
+        }
+        return Math.sqrt(((double) 1 / (vetor.length - 1)) * sum);
+    }
+    
     private double[] ordenaVetor(double[] vetor){
         Arrays.sort(vetor);
         return vetor;
