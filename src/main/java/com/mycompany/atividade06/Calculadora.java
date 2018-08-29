@@ -67,8 +67,37 @@ public class Calculadora {
         return Math.sqrt(((double) 1 / (vetor.length - 1)) * sum);
     }
     
+    public double[] menoresMaiores(double[] vetor, int n) throws Exception{
+        if(n <= 0)
+            throw new Exception();
+        ordenaVetor(vetor);
+        double[] maiores = new double[n], 
+                menores = new double[n];
+        int i = 0,
+            j = vetor.length - 1;
+        while(i < n){
+            menores[i] = vetor[i];
+            maiores[i] = vetor[j];
+            i++;
+            j--;
+        }
+        ordenaVetor(maiores);
+        double[] resultado = new double[n * 2];
+        System.arraycopy(menores, 0, resultado, 0, n);
+        for(int count = menores.length; count < n * 2; count++){
+            resultado[count] = maiores[count-menores.length];
+        }
+        return resultado;
+    }
+    
     private double[] ordenaVetor(double[] vetor){
         Arrays.sort(vetor);
         return vetor;
+    }
+    
+    private void vetorVazio(double[] vetor) throws Exception{
+        if(vetor.length == 0){
+            throw new Exception();
+        }
     }
 }
