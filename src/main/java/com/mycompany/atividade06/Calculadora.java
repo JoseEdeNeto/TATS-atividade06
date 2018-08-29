@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class Calculadora {
     
-    public double calculaMediana(double[] vetor){
+    public double calculaMediana(double[] vetor) throws Exception{
+        vetorVazio(vetor);
         ordenaVetor(vetor);
         double mediana;
         int tamanho = vetor.length;
@@ -18,7 +19,8 @@ public class Calculadora {
         return mediana;
     }
     
-    public double calculaMedia(double[] vetor){
+    public double calculaMedia(double[] vetor) throws Exception{
+        vetorVazio(vetor);
         ordenaVetor(vetor);
         double media = 0.0;
         for (double valor : vetor){
@@ -28,16 +30,19 @@ public class Calculadora {
         return media;
     }
 
-    public double getMenorValor(double[] vetor) {
+    public double getMenorValor(double[] vetor) throws Exception {
+        vetorVazio(vetor);
         ordenaVetor(vetor);
         return vetor[0];
     }
-    public double getMaiorValor(double[] vetor) {
+    public double getMaiorValor(double[] vetor) throws Exception {
+        vetorVazio(vetor);
         ordenaVetor(vetor);
         return vetor[vetor.length - 1];
     }
 
-    public int getValoresAbaixo(double[] vetor, double media) {
+    public int getValoresAbaixo(double[] vetor, double media) throws Exception {
+        vetorVazio(vetor);
         ordenaVetor(vetor);
         int count = 0;
         for(double valor : vetor){
@@ -47,7 +52,8 @@ public class Calculadora {
         return count;
     }
 
-    public int getValoresAcima(double[] vetor, double media) {
+    public int getValoresAcima(double[] vetor, double media) throws Exception {
+        vetorVazio(vetor);
         ordenaVetor(vetor);
         int count = 0;
         for(double valor : vetor){
@@ -57,7 +63,8 @@ public class Calculadora {
         return count;
     }
     
-    public double calculaDesvioPadrao(double[] vetor) {
+    public double calculaDesvioPadrao(double[] vetor) throws Exception {
+        vetorVazio(vetor);
         double sum = 0;
         double media = calculaMedia(vetor);
         for(double valor : vetor){
@@ -68,6 +75,7 @@ public class Calculadora {
     }
     
     public double[] menoresMaiores(double[] vetor, int n) throws Exception{
+        vetorVazio(vetor);
         if(n <= 0)
             throw new Exception();
         ordenaVetor(vetor);
@@ -100,4 +108,5 @@ public class Calculadora {
             throw new Exception();
         }
     }
+    
 }

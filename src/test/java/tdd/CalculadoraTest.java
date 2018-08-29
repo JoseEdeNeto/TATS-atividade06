@@ -7,7 +7,7 @@ import org.junit.Test;
 public class CalculadoraTest {
    
    @Test
-   public void testeVetorOrdenadoImparMediana(){
+   public void testeVetorOrdenadoImparMediana() throws Exception{
        double[] vetor = {1, 2, 3, 4, 5};
        Calculadora mediana = new Calculadora();;
        double res = mediana.calculaMediana(vetor);
@@ -16,7 +16,7 @@ public class CalculadoraTest {
    }
    
    @Test
-   public void testeVetorDesordenadoParMediana(){
+   public void testeVetorDesordenadoParMediana() throws Exception{
        double[] vetor = {5, 2, 1, 4, 3, 6};
        Calculadora mediana = new Calculadora();;
        double res = mediana.calculaMediana(vetor);
@@ -25,7 +25,7 @@ public class CalculadoraTest {
    }
    
    @Test
-   public void testeMediaValoresMenorMaiorAcimaAbaixo(){
+   public void testeMediaValoresMenorMaiorAcimaAbaixo() throws Exception{
        double[] vetor = {5, 2, 1, 4, 3, 6};
        Calculadora calc = new Calculadora();
        double media = calc.calculaMedia(vetor);
@@ -42,7 +42,7 @@ public class CalculadoraTest {
    }
    
    @Test
-   public void testDesvioPadrao(){
+   public void testDesvioPadrao() throws Exception{
        double[] vetor = {5, 2, 1, 4, 3, 6};
        Calculadora calc = new Calculadora();
        double desvio = calc.calculaDesvioPadrao(vetor);
@@ -61,7 +61,7 @@ public class CalculadoraTest {
    }
    
    @Test(expected = Exception.class)
-   public void testeVetorVazio(){
+   public void testeVetorVazio() throws Exception{
        double[] vetor = {};
        Calculadora calc = new Calculadora();
        calc.calculaMedia(vetor);
