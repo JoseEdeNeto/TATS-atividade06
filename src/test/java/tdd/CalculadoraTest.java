@@ -40,4 +40,13 @@ public class CalculadoraTest {
        Assert.assertEquals(3, numerosAbaixo);
        Assert.assertEquals(3, numerosAcima);
    }
+   
+   @Test
+   public void testDesvioPadrao(){
+       double[] vetor = {5, 2, 1, 4, 3, 6};
+       Calculadora calc = new Calculadora();
+       double desvio = calc.calculaDesvioPadrao(vetor);
+       
+       Assert.assertEquals(1.707825, desvio, 0.5);
+   }
 }
